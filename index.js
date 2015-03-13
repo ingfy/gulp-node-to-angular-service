@@ -16,7 +16,9 @@ module.exports = function (opt) {
         node2angular(opt, function (err, result) {
             if (err) callback(err);
 
-            callback(null, err);
+            file.contents = new Buffer(result);
+
+            callback(null, file);
         });
     });
 }
